@@ -1,17 +1,14 @@
-import re
 import json
 import fire
 import yaml
 import boto3
 import pathlib
 import functools
-from distutils import util as distutils_util
 from ebcli.lib import elasticbeanstalk
 from ebcli.operations import commonops
 from elastictalk import utils, pipe
 
-DB_URL_PATTERN = \
-    r'(?P<connection_info>.*)@(?P<address>.*):(?P<port_slash_db>.*)'
+
 eb = boto3.client('elasticbeanstalk')
 eb_terminated_waiter = eb.get_waiter('environment_terminated')
 rds = boto3.client('rds')
