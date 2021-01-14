@@ -39,6 +39,7 @@ jobs:
           command: |
             . venv/bin/activate
             python3 -m unittest discover -v 2 -s .
+            flake8
 
   deploy:
     docker:
